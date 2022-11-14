@@ -12,11 +12,14 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for(let i = 0; i < coffees.length; i++){
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
+
+Const filterData = word => {
+    Return data.filter(item => item.french.includes(word));}
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
