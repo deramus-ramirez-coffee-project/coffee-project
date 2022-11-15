@@ -23,8 +23,11 @@ and the type of roast in a paragraph.
 
 Don't display the ids, these are only for our application's internal use-->
 
-<div class="container">
-    <div class="d-flex justify-content-end row">
+<div class="container d-flex justify-content-end">
+    <div class="coffee-list col-6">
+    <div  id="coffees">
+    </div>
+</div>
 <!--        <div class="col-6">-->
             <form class="col-6 mb-3 top-right">
                 <label for="roast-selection"><strong>Roast</strong></label>
@@ -37,7 +40,8 @@ Don't display the ids, these are only for our application's internal use-->
                 <div class="form-group">
                     <label for="coffee-box"><strong>Coffee Name</strong></label>
                     <input type="text" class="form-control" id="coffee-box">
-                    <button type="submit" id="submit" class="btn btn-primary" >Submit</button>
+                    <div class="card" style="width: 35rem;">
+                    <button type="submit"  id="submit" class="btn btn-primary" >Submit</button>
                 </div>
                 <div class="subtitle d-flex justify-content-center">
                     <h3>Add a Coffee</h3>
@@ -52,19 +56,16 @@ Don't display the ids, these are only for our application's internal use-->
                     </select>
                     <div class="form-group">
                         <label for="coffee-box"><strong>Coffee Name</strong></label>
-                        <input type="text" class="form-control" id="coffee-box">
-                        <button type="submit" id="submit" class="btn btn-primary" >Submit</button>
+                        <input type="text" class="form-control" id="coffee-box2">
+                        <div class="card" style="width: 35rem;">
+                        <button type="submit" id="submit2" class="btn btn-primary" >Submit</button>
                     </div>
        </form>
-
+        </div>
     </div>
-</div>
 
 
-<div class="coffee-list col-6">
-   <div  id="coffees">
-   </div>
-</div>
+
 
 <!--<form class="col-6 top-right">-->
 <!--    <label for="roast-selection"><strong>Roast</strong></label>-->
