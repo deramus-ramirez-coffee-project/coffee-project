@@ -1,15 +1,4 @@
-*{
-    background-image: url("img/coffee.jpeg");
-}
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
 h1{
     display: flex;
     justify-content: center;
@@ -18,5 +7,5 @@ h1{
 -webkit-column-count: 2;
 }
 p{
-    background-color: ;
+    /*background-color: ;*/
 }
