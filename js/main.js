@@ -25,18 +25,19 @@ function updateCoffees(e) {
     var selectedRoast = roastSelection.value;
     var value = 'all';
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (selectedRoast === "all") {
-        coffeeName.innerHTML = renderCoffees();
-        }else if (coffee.roast === selectedRoast && coffee.name.toUpperCase().includes(coffeeName.value)) {
+   // coffees.forEach(function(coffee) {
+
+            coffees.forEach(function (coffee) {
+
+                if ( selectedRoast=== 'all'  && coffee.name.toLowerCase().includes(coffeeName.value.toLowerCase())) {
                     filteredCoffees.push(coffee);
                     console.log(coffeeName.value);
-                } else if (coffee.roast === selectedRoast && coffee.name.toLowerCase().includes(coffeeName.value)) {
+                } else if (coffee.roast === selectedRoast && coffee.name.toLowerCase().includes(coffeeName.value.toLowerCase())) {
                     filteredCoffees.push(coffee);
-            }else{
-        }
-    });
+                }
+            });
             tbody.innerHTML = renderCoffees(filteredCoffees);
+
         }
 
 
