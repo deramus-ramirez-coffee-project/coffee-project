@@ -24,12 +24,10 @@ function renderCoffees(coffees) {
     return html;
 }
 
-
-
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
-    var value = 'all';
+
     var filteredCoffees = [];
 
 
