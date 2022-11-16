@@ -3,14 +3,16 @@
 let roast3 = "";
 
 
-function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
-    html += '<h3>' + coffee.name + '</h3>';
-    html += '<p>' + coffee.roast + '</p>';
-    html += '</div>';
 
-    return html;
-}
+ function renderCoffee(coffee) {
+     var html = '<div class="coffee">';
+     html += '<h3>' + coffee.name + '</h3>';
+     html += '<p>' + coffee.roast + '</p>';
+     html += '</div>';
+
+
+     return html;
+ }
 
 function renderCoffees(coffees) {
     console.log(coffees)
@@ -23,10 +25,13 @@ function renderCoffees(coffees) {
 }
 
 
+
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
+    var value = 'all';
     var filteredCoffees = [];
+
 
 
     coffees.forEach(function (coffee) {
@@ -39,6 +44,7 @@ function updateCoffees(e) {
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
+
 
 }
 
@@ -84,6 +90,7 @@ var submitButton = document.querySelector('#submit');
 var submitButton2 = document.querySelector('#submit2');
 var roastSelection = document.querySelector('#roast-selection');
 var coffeeName = document.querySelector("#coffee-box");
+
 var newCoffee2 = document.querySelector("#coffee-box2");
 const roastInput = document.querySelector(`#roast-selection2`);
 
@@ -94,6 +101,7 @@ tbody.innerHTML = renderCoffees(coffees);
 
 
 submitButton.addEventListener('click', updateCoffees);
+
 submitButton2.addEventListener('click', addNewCoffee);
 coffeeName.addEventListener("keyup" , updateCoffees);
 roastInput.addEventListener(`change`, function (){
@@ -108,3 +116,4 @@ roastInput.addEventListener(`change`, function (){
         roast3 = `dark`;
     }
 })
+

@@ -6,3 +6,12 @@ h1{
 #coffees{
 -webkit-column-count: 2;
 }
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.coffee-list{
+    -webkit-column-count: 2;
+}
