@@ -1,11 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var html = '<div class="coffee">';
+    html += '<h3>' + coffee.name + '</h3>';
+    html += '<p>' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
 }
@@ -18,19 +17,35 @@ function renderCoffees(coffees) {
     return html;
 }
 
-Const filterData = word => {
-    Return data.filter(item => item.french.includes(word));}
+
+
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
+    var value = 'all';
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+    // coffees.forEach(function(coffee) {
+
+    coffees.forEach(function (coffee) {
+
+        if ( selectedRoast=== 'all'  && coffee.name.toLowerCase().includes(coffeeName.value.toLowerCase())) {
+            filteredCoffees.push(coffee);
+            console.log(coffeeName.value);
+        } else if (coffee.roast === selectedRoast && coffee.name.toLowerCase().includes(coffeeName.value.toLowerCase())) {
             filteredCoffees.push(coffee);
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
+
+}
+
+
+
+
+function newCoffee(inputCoffee){
+    var newCoffee = (" ");
+
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -53,8 +68,14 @@ var coffees = [
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
+var submitButton2 = document.querySelector('#submit2');
 var roastSelection = document.querySelector('#roast-selection');
+var coffeeName = document.querySelector("#coffee-box");
+var newCoffee = document.querySelector("#coffee-box2");
 
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+submitButton2.addEventListener('click', updateCoffees);
+coffeeName.addEventListener("keyup" , updateCoffees);
+newCoffee.addEventListener("keyup",updateCoffees );
